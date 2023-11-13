@@ -1,8 +1,8 @@
 import classes from './Content.module.css';
 
 let Content = ()=>{
-    return <div className={classes.Content}>
-      Content
+    return <div className={`${classes.Content}`} >
+      
     </div>
   };
   

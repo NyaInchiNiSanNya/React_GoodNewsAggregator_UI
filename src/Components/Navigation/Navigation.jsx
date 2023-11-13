@@ -1,8 +1,9 @@
 import classes from './Navigation.module.css';
+import MainNav from './MainNav/MainNav';
 
-let Navigation = ()=>{
+let Navigation = () => {
   return <div className={classes.Navigation}>
-Navbar
+    <MainNav></MainNav>
   </div>
 };
 
