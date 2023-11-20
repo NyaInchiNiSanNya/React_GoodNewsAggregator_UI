@@ -1,14 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Layout from './Components/Layout.jsx';
+import renderTree from './render.js';
+import {state, updateLogin, updatePassword} from './state.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Layout></Layout>
-  </React.StrictMode>
-);
- 
+renderTree(state, updateLogin,updatePassword);
+
 reportWebVitals();

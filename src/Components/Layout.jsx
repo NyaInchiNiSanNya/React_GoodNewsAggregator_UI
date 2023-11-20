@@ -4,12 +4,12 @@ import Header from './Header/Header';
 import classes from './Layout.module.css';
 import { BrowserRouter } from 'react-router-dom';
 
-let Layout = () => {
+let Layout = (props) => {
     return (
       <BrowserRouter>
         <div className={classes.Grid}>
           <Navigation></Navigation>
-          <Content></Content>
+          <Content  content={props} ></Content>
           <Header></Header>
         </div>
         </BrowserRouter>
