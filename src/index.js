@@ -1,7 +1,6 @@
-import reportWebVitals from './reportWebVitals';
 import renderTree from './render.js';
-import {state, updateLogin, updatePassword} from './state.js';
+import store from './state.js';
 
-renderTree(state, updateLogin,updatePassword);
+renderTree(store.getState(), store.dispatch.bind(store));
 
-reportWebVitals();
+store.subscribe(renderTree);

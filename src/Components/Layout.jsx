@@ -6,10 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 let Layout = (props) => {
     return (
+      
       <BrowserRouter>
         <div className={classes.Grid}>
           <Navigation></Navigation>
-          <Content  content={props} ></Content>
+          <Content  state={props.state} dispatch={props.dispatch} ></Content>
           <Header></Header>
         </div>
         </BrowserRouter>

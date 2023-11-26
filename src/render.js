@@ -6,17 +6,17 @@ import Layout from './Components/Layout.jsx';
 
 let root = null;
 
-const render = (props, updateLogin, updatePassword) => (
+const render = (state, dispatch) => (
   <React.StrictMode>
-    <Layout state={props} updateLogin={updateLogin} updatePassword={updatePassword}></Layout>
+    <Layout state={state} dispatch={dispatch}></Layout>
   </React.StrictMode>
 );
 
-const renderTree = (props, updateLogin, updatePassword) => {
+const renderTree = (state, dispatch) => {
   if (!root) {
     root = ReactDOM.createRoot(document.getElementById('root'));
   }
-  root.render(render(props, updateLogin, updatePassword));
+  root.render(render(state, dispatch));
 };
 
   export default renderTree;

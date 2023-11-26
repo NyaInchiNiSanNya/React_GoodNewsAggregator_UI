@@ -5,27 +5,28 @@ import Settings from './ContentType/Settings';
 import Admin from './ContentType/Admin';
 import Login from './ContentType/Login';
 
-let Content = (props)=>{
-    return <div className={`${classes.Content}`} >
+let Content = (props) => {
+  debugger;
+  return <div className={`${classes.Content}`} >
     <Routes>
-        <Route path='/news' element={<News news={props.content.state.content.news} />}>
-        <Route path='sport' element={<News news={props.content.state.content.news} category="sport" />} />
-        <Route path='science' element={<News news={props.content.state.content.news} category="science"/>} />
-        <Route path='animals' element={<News news={props.content.state.content.news} category="animals"/>} />
-        <Route path='auto' element={<News news={props.content.state.content.news} />} category="auto"/>
-        <Route path='lifestyle' element={<News news={props.content.state.content.news} category="lifestyle" />} />
-        </Route>
-        
-        <Route path='/settings' element={<Settings />} />
-        <Route path='/admin' element={<Admin />} />
-        <Route path='/login' element={<Login 
-        newLogin={props.content.state.content.login.tempLoginField} 
-        newPassword={props.content.state.content.login.tempPasswordField}
-        updateLogin={props.content.updateLogin} 
-        updatePassword={props.content.updatePassword}/>} />
+      <Route path='/news' element={<News news={props.state.content.news} />}>
+        <Route path='sport' element={<News news={props.state.content.news} category="sport" />} />
+        <Route path='science' element={<News news={props.state.content.news} category="science" />} />
+        <Route path='animals' element={<News news={props.state.content.news} category="animals" />} />
+        <Route path='auto' element={<News news={props.state.content.news} />} category="auto" />
+        <Route path='lifestyle' element={<News news={props.state.content.news} category="lifestyle" />} />
+      </Route>
 
-      </Routes>
-    </div>
-  };
-  
-  export default Content;  
+      <Route path='/settings' element={<Settings />} />
+      <Route path='/admin' element={<Admin />} />
+      <Route path='/login' element={<Login
+        newLogin={props.state.content.login.tempLoginField}
+        newPassword={props.state.content.login.tempPasswordField}
+        dispatch={props.dispatch}></Login>
+      } />
+
+    </Routes>
+  </div>
+};
+
+export default Content;  

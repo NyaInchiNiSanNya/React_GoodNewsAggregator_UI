@@ -1,18 +1,22 @@
 import React from 'react';
+import {updateLoginActionCreator, updatePasswordActionCreator} from '../../../state';
+
 
 let Login = (props) => {
-
   let loginElement= React.createRef();
   let passwordElement= React.createRef();
 
   let changeLogin=()=>{
+    debugger;
     let login=loginElement.current.value;
-    props.updateLogin(login);
+    let action=updateLoginActionCreator(login);
+    props.dispatch(action);
   }
   
     let changePassword=()=>{
       let password=passwordElement.current.value;
-      props.updatePassword(password);
+      let action=updatePasswordActionCreator(password);
+      props.dispatch(action);
     }
 
 
