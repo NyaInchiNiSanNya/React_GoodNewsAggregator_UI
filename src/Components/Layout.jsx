@@ -5,6 +5,7 @@ import classes from './Layout.module.css';
 import { BrowserRouter } from 'react-router-dom';
 
 let Layout = (props) => {
+  debugger;
     return (
       
       <BrowserRouter>

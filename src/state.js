@@ -50,7 +50,7 @@ export const updateLoginActionCreator= (newLogin) =>{
 export const updatePasswordActionCreator= (newPassword) =>{
     return {
         type:'update-password',
-        newLogin: newPassword
+        newPassword: newPassword
     }
 };
 
